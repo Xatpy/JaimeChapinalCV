@@ -8,59 +8,60 @@
 
 struct Study
 {
-	std::string		vDegree;
-	std::string		vUniversity;
-	std::string		vDate;
+	std::string		_Degree;
+	std::string		_University;
+	std::string		_Date;
 
 	Study (std::string strDegree, std::string strUniversity, std::string strYears) 
-			: vDegree(strDegree), vUniversity(strUniversity), vDate(strYears)	{};
+			:	_Degree(strDegree), _University(strUniversity), _Date(strYears)	{};
 };
 
 struct Job
 {
-	std::string		vCompany;
-	std::string		vCategory;
-	std::string		vDate;
-	std::string		vDescription;
+	std::string		_Company;
+	std::string		_Category;
+	std::string		_Date;
+	std::string		_Description;
 
-	Job (std::string strCompany, std::string strCategory, std::string strYears, std::string strDesc) 
-			: vCompany(strCompany), vCategory(strCategory), vDate(strYears), vDescription(strDesc)	{};
+	Job	(std::string strCompany, std::string strCategory, std::string strYears, std::string strDesc) 
+			:	_Company(strCompany), _Category(strCategory), _Date(strYears), _Description(strDesc)	{};
 };
 
 struct Game
 {
-	std::string		vName;
-	std::string		vYear;
-	std::string		vTechnology;
-	std::string		vWeb;
+	std::string		_Name;
+	std::string		_Year;
+	std::string		_Technology;
+	std::string		_Web;
 
-	Game (std::string strName, std::string strYear, std::string strTechnology, std::string strWeb) 
-			: vName(strName), vYear(strYear), vTechnology(strTechnology), vWeb(strWeb)	{};
+	Game	(std::string strName, std::string strYear, std::string strTechnology, std::string strWeb) 
+			:	_Name(strName), _Year(strYear), _Technology(strTechnology), _Web(strWeb)	{};
 };
 
 struct Publication
 {
-	std::string		vTitle;
-	std::string		vCongress;
-	std::string		vYear;
-	std::string		vURL;
+	std::string		_Title;
+	std::string		_Congress;
+	std::string		_Year;
+	std::string		_URL;
 
 	Publication	(std::string strTitle, std::string strCongress, std::string strYear, std::string strURL)
-		:	vTitle(strTitle), vCongress(strCongress), vYear(strYear), vURL(strURL)	{};
+			:	_Title(strTitle), _Congress(strCongress), _Year(strYear), _URL(strURL)	{};
 };
 
 struct Skill
 {
-	std::string		vName;
-	int				iLevel;	//[0-3]
-	Skill			(std::string strName, int level)
-		:		vName(strName), iLevel(level)			{};			
+	std::string		_Name;
+	int			iLevel;	//[0-3]
+	
+	Skill	(std::string strName, int level)
+			:	_Name(strName), iLevel(level)	{};
 };
 
 class JaimeChapinal
 {
 public:
-	void			SetStudies			()		
+	void	SetStudies	()
 		{
 			m_vStudies.push_back(Study("Technical Engineer in Computer Management","Charles III University of Madrid", "2007-2010"));
 			m_vStudies.push_back(Study("Computer Science Degree","Charles III University of Madrid", "2010-2011"));
@@ -68,13 +69,13 @@ public:
 			m_vStudies.push_back(Study("Master in Video Games Development","Complutense University of Madrid","2012-2013"));
 		}
 
-	void			SetJobs				()		
+	void	SetJobs		()
 		{
 			m_vJobs.push_back(Job("Mediapost Spain","Junior programmer", "2010-2011", ".NET programmer / C#"));
 			m_vJobs.push_back(Job("Simfor","Programmer", "2012-Act.", "Simulators programmer / C++"));
 		}
 
-	void			SetGames			()		
+	void	SetGames	()
 		{
 			m_vGames.push_back(Game("SuperEnjutoIA*", "2011","XNA/C#","http://www.superenjutoia.es"));
 			m_vGames.push_back(Game("TAF Kinect", "2012","Kinect/WPF/C#","http://www.tafkinect.com"));
@@ -84,14 +85,14 @@ public:
 			m_vGames.push_back(Game("13Floors", "2014","Unity3D/C#","http://globalgamejam.org/2014/games/13floors"));
 		}
 
-	void			SetPublications		()
+	void	SetPublications	()
 	{
 		m_vPublications.push_back(Publication("Tecnicas de Interaccion Natural usando Kinect",
-			"Procedings of the 13th International Conference on Interaccion Persona-Ordenador",	"2012", 
+			"Procedings of the 13th International Conference on Interaccion Persona-Ordenador", "2012", 
 			"http://dl.acm.org/citation.cfm?id=2379650&dl=ACM&coll=DL"));
 	}
 
-	void			SetSkills			()
+	void	SetSkills	()
 	{
 		m_vSkills.push_back(Skill("C++",3));
 		m_vSkills.push_back(Skill("C#", 2));
@@ -112,41 +113,41 @@ public:
 	
 
 public:	//Inline methods
-	std::vector<Study>				GetStudies				()												{ return m_vStudies; }
-	std::vector<Job>				GetJobs					()												{ return m_vJobs; }
-	std::vector<Game>				GetGames				()												{ return m_vGames; }
-	std::vector<Publication>		GetPublications			()												{ return m_vPublications; }
-	std::vector<Skill>				GetSkills				()												{ return m_vSkills; }
+	std::vector<Study>			GetStudies			()					{ return m_vStudies; }
+	std::vector<Job>			GetJobs				()					{ return m_vJobs; }
+	std::vector<Game>			GetGames			()					{ return m_vGames; }
+	std::vector<Publication>		GetPublications			()					{ return m_vPublications; }
+	std::vector<Skill>			GetSkills			()					{ return m_vSkills; }
 
-	std::string						GetName					()												{ return m_Name; }
-	std::string						GetBirthdate			()												{ return m_Birthdate; }
-	std::string						GetCity					()												{ return m_City; }
+	std::string				GetName				()					{ return m_Name; }
+	std::string				GetBirthdate			()					{ return m_Birthdate; }
+	std::string				GetCity				()					{ return m_City; }
 
-	void									SetEmail				(std::string strEmail)			{ m_Email = strEmail; }
-		std::string						GetEmail				()													{ return m_Email; }
-	void									SetWeb					(std::string strWeb)				{ m_Web = strWeb; }
-		std::string						GetWeb					()													{ return m_Web; }
-	void									SetTelephone		(std::string strTelephone)	{ m_Telephone = strTelephone; }
-		std::string						GetTelephone		()													{ return m_Telephone; }
+	std::string				GetEmail			()					{ return m_Email; }
+		void					SetEmail			(std::string strEmail)			{ m_Email = strEmail; }
+	std::string				GetWeb				()					{ return m_Web; }
+		void					SetWeb				(std::string strWeb)			{ m_Web = strWeb; }
+	std::string				GetTelephone			()					{ return m_Telephone; }
+		void					SetTelephone			(std::string strTelephone)		{ m_Telephone = strTelephone; }
+
 	
 
 public: //Const
-			JaimeChapinal				() 	: m_Name("Jaime Chapinal Cervantes"), m_Birthdate("08/05/1989"), m_City("Madrid") 	
-																						{} ;
-			~JaimeChapinal			()													{} ;
+		JaimeChapinal			() 	: m_Name("Jaime Chapinal Cervantes"), m_Birthdate("08/05/1989"), m_City("Madrid") {} ;
+		~JaimeChapinal			()									{} ;
 
 private: // Data
-	std::string						m_Name;
-	std::string						m_Birthdate;
-	std::string						m_City;
-	std::string						m_Email;
-	std::string						m_Telephone;
-	std::string						m_Web;
+	std::string				m_Name;
+	std::string				m_Birthdate;
+	std::string				m_City;
+	std::string				m_Email;
+	std::string				m_Telephone;
+	std::string				m_Web;
 
 	std::vector<Study>			m_vStudies;
 	std::vector<Job>			m_vJobs;
 	std::vector<Game>			m_vGames;
-	std::vector<Publication>	m_vPublications;
+	std::vector<Publication>		m_vPublications;
 	std::vector<Skill>			m_vSkills;
 };
 

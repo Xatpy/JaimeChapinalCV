@@ -52,7 +52,7 @@ void ShowStudiesData(std::vector<Study> vecStudies)
 	std::vector<Study>::reverse_iterator	iter;
 	for (iter = vecStudies.rbegin(); iter != vecStudies.rend(); ++iter)
 	{
-		std::cout <<"+ " << iter->vDegree << " - " << iter->vUniversity << " - " << iter->vDate << std::endl;
+		std::cout <<"+ " << iter->_Degree << " - " << iter->_University << " - " << iter->_Date << std::endl;
 	}
 	ShowContinue();
 }
@@ -66,7 +66,7 @@ void ShowPublications(std::vector<Publication> vecPublications)
 	std::cout << std::endl;
 
 	Publication pub = vecPublications[0];
-	std::cout << "~ " << pub.vTitle << " - " << pub.vCongress << " - " << pub.vYear << " - " << pub.vURL << std::endl;
+	std::cout << "~ " << pub._Title << " - " << pub._Congress << " - " << pub._Year << " - " << pub._URL << std::endl;
 	ShowContinue();
 }
 
@@ -81,8 +81,8 @@ void ShowProfessionalData(std::vector<Job> vecJobs)
 	std::vector<Job>::reverse_iterator  iter;
 	for (iter = vecJobs.rbegin(); iter != vecJobs.rend(); ++iter)
 	{
-		std::cout << "+ " << iter->vCompany << " - " << iter->vCategory << " - " <<  iter->vDate;
-		std::cout << "- " << iter->vDescription << std::endl;
+		std::cout << "+ " << iter->_Company << " - " << iter->_Category << " - " <<  iter->_Date;
+		std::cout << " - " << iter->_Description << std::endl;
 	}
 	ShowContinue();
 }
@@ -98,7 +98,7 @@ void ShowGames(std::vector<Game> vecGames)
 	std::vector<Game>::reverse_iterator  iter;
 	for (iter = vecGames.rbegin(); iter != vecGames.rend(); ++iter)
 	{
-		std::cout <<"+ " << iter->vName << " - " << iter->vYear << " - " << iter->vTechnology << " - " << iter->vWeb << std::endl;
+		std::cout <<"+ " << iter->_Name << " - " << iter->_Year << " - " << iter->_Technology << " - " << iter->_Web << std::endl;
 	}
 
 	ShowContinue();
@@ -115,7 +115,7 @@ void ShowSkills(std::vector<Skill> vecSkill)
 	std::vector<Skill>::iterator	iter;
 	for (iter = vecSkill.begin(); iter != vecSkill.end(); ++iter)
 	{
-		std::cout <<"~ " << iter->vName << " : ";
+		std::cout <<"~ " << iter->_Name << " : ";
 		for (int level = 0; level < iter->iLevel; ++level)
 		{
 			std::cout << "*";
